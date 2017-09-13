@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="241.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.make.alex.ui.controller.EditStrokaController">
+   <children>
+      <GridPane minHeight="200.0" minWidth="300.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="NEVER" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="NEVER" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="NEVER" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="NEVER" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="NEVER" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="NEVER" />
+        </rowConstraints>
+         <children>
+            <Label text="Тип" />
+            <Label text="Дата ввода" GridPane.rowIndex="1" />
+            <Label text="Название" GridPane.rowIndex="4" />
+            <Label text="Комментарий" GridPane.rowIndex="5" />
+            <TextField fx:id="nazvanieField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextArea fx:id="kommentariField" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <DatePicker fx:id="dateCreate" disable="true" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ComboBox fx:id="typeStroki" prefWidth="150.0" GridPane.columnIndex="1" />
+            <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#handleOK" text="Сохранить">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#handleCancel" text="Отмена">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets top="5.0" />
+               </GridPane.margin>
+            </HBox>
+            <Label text="Годен до" GridPane.rowIndex="2" />
+            <DatePicker fx:id="dateLost" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <HBox alignment="TOP_CENTER" spacing="4.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <children>
+                  <Button accessibleHelp="добавить 7 дней" accessibleText="добавить 7 дней" mnemonicParsing="false" onAction="#handleAdd7D" prefWidth="35.0" text="7Д">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                  <Button accessibleHelp="добавить 1 месяц" accessibleText="добавить 1 месяц" mnemonicParsing="false" onAction="#handleAdd1M" prefWidth="35.0" text="1М">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                  <Button accessibleHelp="добавить 6 месяцев" accessibleText="добавить 6 месяцев" mnemonicParsing="false" onAction="#handleAdd6M" prefWidth="35.0" text="6М">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                  <Button accessibleHelp="добавить 1 год" accessibleText="добавить 1 год" mnemonicParsing="false" onAction="#handleAdd1Y" prefWidth="35.0" text="1Г" />
+               </children>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
